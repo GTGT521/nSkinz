@@ -1,4 +1,4 @@
-#include "KitParser.hpp"
+﻿#include "KitParser.hpp"
 #include "Utilities/Platform.hpp"
 #include "nSkinz.hpp"
 
@@ -205,6 +205,6 @@ void InitializeKits()
 
 		std::sort(k_stickers.begin(), k_stickers.end());
 
-		k_stickers.insert(k_stickers.begin(), { 0, "None" });
+		k_stickers.insert(k_stickers.begin(), { 0, u8"没有" });
 	}
 }
