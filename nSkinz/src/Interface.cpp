@@ -211,7 +211,7 @@ void DrawGUI()
 
 		// Lower buttons for modifying items and saving
 		{
-			auto button_size = ImVec2(ImGui::GetColumnWidth() - 1, 20);
+			auto button_size = ImVec2(ImGui::GetColumnWidth() - 1, 30);
 
 			if(ImGui::Button("Update", button_size))
 				(*g_client_state)->ForceFullUpdate();
