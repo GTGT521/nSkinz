@@ -22,7 +22,7 @@ namespace ImGui
 
 void DrawGUI()
 {
-	ImGui::SetNextWindowSize(ImVec2(700, 400));
+	ImGui::SetNextWindowSize(ImVec2(760, 510));
 	if(ImGui::Begin("nSkinz", nullptr,
 		ImGuiWindowFlags_NoResize |
 		ImGuiWindowFlags_NoCollapse |
