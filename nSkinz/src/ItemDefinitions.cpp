@@ -1,4 +1,4 @@
-#include "ItemDefinitions.hpp"
+﻿#include "ItemDefinitions.hpp"
 
 // We need these for overriding viewmodels and icons
 const std::map<size_t, Item_t> k_weapon_info =
@@ -27,82 +27,82 @@ const std::map<size_t, Item_t> k_weapon_info =
 
 const std::vector<WeaponName_t> k_knife_names =
 {
-	{0, "Default"},
-	{WEAPON_KNIFE_BAYONET, "Bayonet"},
-	{WEAPON_KNIFE_FLIP, "Flip Knife"},
-	{WEAPON_KNIFE_GUT, "Gut Knife"},
-	{WEAPON_KNIFE_KARAMBIT, "Karambit"},
-	{WEAPON_KNIFE_M9_BAYONET, "M9 Bayonet"},
-	{WEAPON_KNIFE_TACTICAL, "Huntsman Knife"},
-	{WEAPON_KNIFE_FALCHION, "Falchion Knife"},
-	{WEAPON_KNIFE_SURVIVAL_BOWIE, "Bowie Knife"},
-	{WEAPON_KNIFE_BUTTERFLY, "Butterfly Knife"},
-	{WEAPON_KNIFE_PUSH, "Shadow Daggers"}
+	{0, u8"默认" },
+	{WEAPON_KNIFE_BAYONET, u8"刺刀"},
+	{WEAPON_KNIFE_FLIP, u8"折叠刀"},
+	{WEAPON_KNIFE_GUT, u8"穿肠刀"},
+	{WEAPON_KNIFE_KARAMBIT, u8"爪子刀"},
+	{WEAPON_KNIFE_M9_BAYONET, u8"M-9 刺刀"},
+	{WEAPON_KNIFE_TACTICAL, u8"猎杀者匕首"},
+	{WEAPON_KNIFE_FALCHION, u8"弯刀"},
+	{WEAPON_KNIFE_SURVIVAL_BOWIE, u8"鲍伊猎刀"},
+	{WEAPON_KNIFE_BUTTERFLY, u8"蝴蝶刀"},
+	{WEAPON_KNIFE_PUSH, u8"暗影双匕"}
 };
 
 const std::vector<WeaponName_t> k_glove_names =
 {
-	{0, "Default"},
-	{GLOVE_STUDDED_BLOODHOUND, "Bloodhound"},
-	{GLOVE_T_SIDE, "Default (Terrorists)"},
-	{GLOVE_CT_SIDE, "Default (Counter-Terrorists)"},
-	{GLOVE_SPORTY, "Sporty"},
-	{GLOVE_SLICK, "Slick"},
-	{GLOVE_LEATHER_WRAP, "Handwrap"},
-	{GLOVE_MOTORCYCLE, "Motorcycle"},
-	{GLOVE_SPECIALIST, "Specialist"}
+	{0, u8"默认"},
+	{GLOVE_STUDDED_BLOODHOUND, u8"血猎"},
+	{GLOVE_T_SIDE, u8"默认 (恐怖分子)"},
+	{GLOVE_CT_SIDE, u8"默认 (反恐精英)"},
+	{GLOVE_SPORTY, u8"运动"},
+	{GLOVE_SLICK, u8"驾驶"},
+	{GLOVE_LEATHER_WRAP, u8"手部束带"},
+	{GLOVE_MOTORCYCLE, u8"摩托"},
+	{GLOVE_SPECIALIST, u8"专业"}
 };
 
 const std::vector<WeaponName_t> k_weapon_names =
 {
-	{WEAPON_KNIFE, "Knife"},
-	{GLOVE_T_SIDE, "Glove"},
+	{WEAPON_KNIFE, u8"匕首"},
+	{GLOVE_T_SIDE, u8"手套"},
 	{7, "AK-47"},
 	{8, "AUG"},
 	{9, "AWP"},
-	{63, "CZ75 Auto"},
-	{1, "Desert Eagle"},
-	{2, "Dual Berettas"},
-	{10, "FAMAS"},
-	{3, "Five-SeveN"},
+	{63, u8"CZ75 自动手枪"},
+	{1, u8"沙漠之鹰"},
+	{2, u8"双持贝瑞塔"},
+	{10, u8"法玛斯"},
+	{3, "FN57"},
 	{11, "G3SG1"},
-	{13, "Galil AR"},
-	{4, "Glock-18"},
+	{13, u8"加利尔 AR"},
+	{4, u8"格洛克 18 型"},
 	{14, "M249"},
-	{60, "M4A1-S"},
+	{60, u8"M4A1 消音版"},
 	{16, "M4A4"},
 	{17, "MAC-10"},
 	{27, "MAG-7"},
 	{33, "MP7"},
 	{34, "MP9"},
-	{28, "Negev"},
-	{35, "Nova"},
+	{28, u8"内格夫"},
+	{35, u8"新星"},
 	{32, "P2000"},
 	{36, "P250"},
 	{19, "P90"},
-	{26, "PP-Bizon"},
-	{64, "R8 Revolver"},
-	{29, "Sawed-Off"},
+	{26, u8"PP-野牛"},
+	{64, u8"R8 左轮手枪"},
+	{29, u8"截短霰弹枪"},
 	{38, "SCAR-20"},
 	{40, "SSG 08"},
 	{39, "SG 553"},
 	{30, "Tec-9"},
 	{24, "UMP-45"},
-	{61, "USP-S"},
+	{61, u8"USP 消音版"},
 	{25, "XM1014"},
 };
 
 const std::vector<QualityName_t> k_quality_names =
 {
-	{0, "Default"},
-	{1, "Genuine"},
-	{2, "Vintage"},
-	{3, "Unusual"},
-	{5, "Community"},
-	{6, "Developer"},
-	{7, "Self-Made"},
-	{8, "Customized"},
-	{9, "Strange"},
-	{10, "Completed"},
-	{12, "Tournament"}
+	{0, u8"默认"},
+	{1, u8"纯正"},
+	{2, u8"传承"},
+	{3, u8"星"},
+	{5, u8"社区"},
+	{6, u8"Valve"},
+	{7, u8"原型"},
+	{8, u8"自定义"},
+	{9, u8"击杀数"},
+	{10, u8"已完成"},
+	{12, u8"纪念品"}
 };
