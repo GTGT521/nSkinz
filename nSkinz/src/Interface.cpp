@@ -1,4 +1,4 @@
-#include "Configuration.hpp"
+﻿#include "Configuration.hpp"
 #include "ItemDefinitions.hpp"
 #include "SDK.hpp"
 #include "KitParser.hpp"
@@ -54,14 +54,14 @@ void DrawGUI()
 
 			auto button_size = ImVec2(ImGui::GetColumnWidth() / 2 - 8.5f, 31);
 
-			if(ImGui::Button("Add", button_size))
+			if (ImGui::Button(u8"添加", button_size))
 			{
 				entries.push_back(EconomyItem_t());
 				selected_id = entries.size() - 1;
 			}
 			ImGui::SameLine();
 
-			if(ImGui::Button("Remove", button_size))
+			if (ImGui::Button(u8"删除", button_size))
 				entries.erase(entries.begin() + selected_id);
 
 			ImGui::PopItemWidth();
@@ -75,31 +75,31 @@ void DrawGUI()
 
 		{
 			// Name
-			ImGui::InputText("Name", selected_entry.name, 32);
+			ImGui::InputText(u8"名称", selected_entry.name, 32);
 
 			// Item to change skins for
-			ImGui::Combo("Item", &selected_entry.definition_vector_index, [](void* data, int idx, const char** out_text)
+			ImGui::Combo(u8"武器", &selected_entry.definition_vector_index, [](void* data, int idx, const char** out_text)
 			{
 				*out_text = k_weapon_names[idx].name;
 				return true;
 			}, nullptr, k_weapon_names.size(), 5);
 
 			// Enabled
-			ImGui::Checkbox("Enabled", &selected_entry.enabled);
+			ImGui::Checkbox(u8"启用", &selected_entry.enabled);
 
 			// Pattern Seed
-			ImGui::InputInt("Seed", &selected_entry.seed);
+			ImGui::InputInt(u8"皮肤外观种子", &selected_entry.seed);
 
 			// Custom StatTrak number
-			ImGui::InputInt("StatTrak", &selected_entry.stat_trak);
+			ImGui::InputInt(u8"击杀数", &selected_entry.stat_trak);
 
 			// Wear Float
-			ImGui::SliderFloat("Wear", &selected_entry.wear, FLT_MIN, 1.f, "%.10f", 5);
+			ImGui::SliderFloat(u8"磨损值", &selected_entry.wear, FLT_MIN, 1.f, "%.10f", 5);
 
 			// Paint kit
 			if(selected_entry.definition_index != GLOVE_T_SIDE)
 			{
-				ImGui::Combo("Paint Kit", &selected_entry.paint_kit_vector_index, [](void* data, int idx, const char** out_text)
+				ImGui::Combo(u8"皮肤名称", &selected_entry.paint_kit_vector_index, [](void* data, int idx, const char** out_text)
 				{
 					*out_text = k_skins[idx].name.c_str();
 					return true;
@@ -107,7 +107,7 @@ void DrawGUI()
 			}
 			else
 			{
-				ImGui::Combo("Paint Kit", &selected_entry.paint_kit_vector_index, [](void* data, int idx, const char** out_text)
+				ImGui::Combo(u8"涂装套件", &selected_entry.paint_kit_vector_index, [](void* data, int idx, const char** out_text)
 				{
 					*out_text = k_gloves[idx].name.c_str();
 					return true;
@@ -115,7 +115,7 @@ void DrawGUI()
 			}
 
 			// Quality
-			ImGui::Combo("Quality", &selected_entry.entity_quality_vector_index, [](void* data, int idx, const char** out_text)
+			ImGui::Combo(u8"类别", &selected_entry.entity_quality_vector_index, [](void* data, int idx, const char** out_text)
 			{
 				*out_text = k_quality_names[idx].name;
 				return true;
@@ -127,7 +127,7 @@ void DrawGUI()
 			// Item defindex override
 			if(selected_entry.definition_index == WEAPON_KNIFE)
 			{
-				ImGui::Combo("Knife", &selected_entry.definition_override_vector_index, [](void* data, int idx, const char** out_text)
+				ImGui::Combo(u8"匕首", &selected_entry.definition_override_vector_index, [](void* data, int idx, const char** out_text)
 				{
 					*out_text = k_knife_names.at(idx).name;
 					return true;
@@ -135,7 +135,7 @@ void DrawGUI()
 			}
 			else if(selected_entry.definition_index == GLOVE_T_SIDE)
 			{
-				ImGui::Combo("Glove", &selected_entry.definition_override_vector_index, [](void* data, int idx, const char** out_text)
+				ImGui::Combo(u8"手套", &selected_entry.definition_override_vector_index, [](void* data, int idx, const char** out_text)
 				{
 					*out_text = k_glove_names.at(idx).name;
 					return true;
@@ -146,13 +146,13 @@ void DrawGUI()
 				// We don't want to override weapons other than knives or gloves
 				static auto unused_value = 0;
 				selected_entry.definition_override_vector_index = 0;
-				ImGui::Combo("Unavailable", &unused_value, "For knives or gloves\0");
+				ImGui::Combo(u8"不可用", &unused_value, u8"不可用匕首,可穿 -_-\0");
 			}
 
 			selected_entry.UpdateValues();
 
 			// Custom Name tag
-			ImGui::InputText("Name Tag", selected_entry.custom_name, 32);
+			ImGui::InputText(u8"名称标签", selected_entry.custom_name, 32);
 		}
 
 		ImGui::NextColumn();
@@ -184,17 +184,17 @@ void DrawGUI()
 
 			ImGui::NextColumn();
 
-			ImGui::Combo("Sticker Kit", &selected_sticker.kit_vector_index, [](void* data, int idx, const char** out_text)
+			ImGui::Combo(u8"印花名称", &selected_sticker.kit_vector_index, [](void* data, int idx, const char** out_text)
 			{
 				*out_text = k_stickers.at(idx).name.c_str();
 				return true;
 			}, nullptr, k_stickers.size(), 10);
 
-			ImGui::SliderFloat("Wear", &selected_sticker.wear, FLT_MIN, 1.f, "%.10f", 5);
+			ImGui::SliderFloat(u8"外观", &selected_sticker.wear, FLT_MIN, 1.f, "%.10f", 5);
 
-			ImGui::SliderFloat("Scale", &selected_sticker.scale, 0.1f, 5.f, "%.3f");
+			ImGui::SliderFloat(u8"尺度", &selected_sticker.scale, 0.1f, 5.f, "%.3f");
 
-			ImGui::SliderFloat("Rotation", &selected_sticker.rotation, 0.f, 360.f, "%.3f");
+			ImGui::SliderFloat(u8"回转", &selected_sticker.rotation, 0.f, 360.f, "%.3f");
 
 			ImGui::NextColumn();
 
@@ -229,9 +229,7 @@ void DrawGUI()
 		ImGui::PopItemWidth();
 		ImGui::Columns(1);
 
-		ImGui::Text("nSkinz by namazso");
-		ImGui::SameLine(ImGui::GetWindowWidth() - ImGui::CalcTextSize("https://skinchanger.download").x - 17);
-		ImGui::Text("https://skinchanger.download");
+		ImGui::Text(u8"创作者: namazso 翻译者: Garry050 合作者: Skyline23");
 
 		ImGui::End();
 	}
