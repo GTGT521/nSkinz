@@ -107,6 +107,9 @@ namespace Render
 		if(s_ready)
 			return;
 
+		ImGuiIO& io = ImGui::GetIO();
+		io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\msjhbd.ttc", 16.0f, nullptr, io.Fonts->GetGlyphRangesChinese());
+
 		s_hwnd = FindWindowA("Valve001", nullptr);
 
 		s_original_wnd_proc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(s_hwnd, GWLP_WNDPROC, LONG_PTR(hkWndProc)));
