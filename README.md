@@ -1,4 +1,4 @@
-![Screenshot](http://i.imgur.com/KfnFQrX.jpg)
+![Screenshot](https://i.ppn.pw/cc/645ca6c4/jea1430c6.png)
 
 ### nSkinz
 
