@@ -213,15 +213,15 @@ void DrawGUI()
 		{
 			auto button_size = ImVec2(ImGui::GetColumnWidth() - 1, 30);
 
-			if(ImGui::Button("Update", button_size))
+			if(ImGui::Button(u8"刷新", button_size))
 				(*g_client_state)->ForceFullUpdate();
 			ImGui::NextColumn();
 
-			if(ImGui::Button("Save", button_size))
+			if(ImGui::Button(u8"保存", button_size))
 				g_config.Save();
 			ImGui::NextColumn();
 
-			if(ImGui::Button("Load", button_size))
+			if(ImGui::Button(u8"载入", button_size))
 				g_config.Load();
 			ImGui::NextColumn();
 		}
