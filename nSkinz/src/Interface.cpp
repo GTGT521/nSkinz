@@ -107,7 +107,7 @@ void DrawGUI()
 			}
 			else
 			{
-				ImGui::Combo(u8"涂装套件", &selected_entry.paint_kit_vector_index, [](void* data, int idx, const char** out_text)
+				ImGui::Combo(u8"手套名称", &selected_entry.paint_kit_vector_index, [](void* data, int idx, const char** out_text)
 				{
 					*out_text = k_gloves[idx].name.c_str();
 					return true;
@@ -146,7 +146,7 @@ void DrawGUI()
 				// We don't want to override weapons other than knives or gloves
 				static auto unused_value = 0;
 				selected_entry.definition_override_vector_index = 0;
-				ImGui::Combo(u8"不可用", &unused_value, u8"不可用匕首,可穿 -_-\0");
+				ImGui::Combo(u8"不可用", &unused_value, u8"针对匕首和手套\0");
 			}
 
 			selected_entry.UpdateValues();
@@ -190,7 +190,7 @@ void DrawGUI()
 				return true;
 			}, nullptr, k_stickers.size(), 10);
 
-			ImGui::SliderFloat(u8"外观", &selected_sticker.wear, FLT_MIN, 1.f, "%.10f", 5);
+			ImGui::SliderFloat(u8"磨损值", &selected_sticker.wear, FLT_MIN, 1.f, "%.10f", 5);
 
 			ImGui::SliderFloat(u8"尺度", &selected_sticker.scale, 0.1f, 5.f, "%.3f");
 

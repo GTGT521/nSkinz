@@ -102,7 +102,7 @@ const std::vector<QualityName_t> k_quality_names =
 	{6, u8"Valve"},
 	{7, u8"原型"},
 	{8, u8"自定义"},
-	{9, u8"击杀数"},
+	{9, u8"StatTrak"},
 	{10, u8"已完成"},
 	{12, u8"纪念品"}
 };
