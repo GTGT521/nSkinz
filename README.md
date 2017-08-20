@@ -37,4 +37,11 @@ git clone https://github.com/namazso/nSkinz.git
 ## License
 
 **This project is licensed under the MIT license**
+
 See the "LICENSE" file for more details.
+
+## Ports
+
+* Japanese port comming soon
+* Original nSkinz [here](https://github.com/namazso/nSkinz)
+* Thank you namazso
